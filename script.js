@@ -14,26 +14,18 @@ function handlePurchase() {
 
 /* ========== FAQ ACCORDION ========== */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const faqItems = document.querySelectorAll('.faq-item');
+function toggleFAQ(element) {
+    const faqItem = element.parentElement;
+    const allFaqItems = document.querySelectorAll('.faq-item');
     
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            // Zavři ostatní otevřené otázky
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            
-            // Přepni aktuální otázku
-            item.classList.toggle('active');
-        });
+    allFaqItems.forEach(item => {
+        if (item !== faqItem) {
+            item.classList.remove('active');
+        }
     });
-});
+    
+    faqItem.classList.toggle('active');
+}
 
 /* ========== ANIMATIONS ========== */
 
