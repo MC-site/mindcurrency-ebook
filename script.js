@@ -9,8 +9,31 @@ function scrollTo(selector) {
 
 function handlePurchase() {
     console.log('🛒 Purchase initiated');
-    alert('🔒 Přesměrování na bezpečné zaplacení...\n\nTady integruj svůj payment gateway (Stripe, Gopay, atd.)');
+    alert('🔒 Přesměrování na bezpečné zaplacení...\n\nTady budeš integrovat tvůj payment gateway (Stripe, Gopay, atd.)');
 }
+
+/* ========== FAQ ACCORDION ========== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Zavři ostatní otevřené otázky
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Přepni aktuální otázku
+            item.classList.toggle('active');
+        });
+    });
+});
 
 /* ========== ANIMATIONS ========== */
 
@@ -74,7 +97,6 @@ const styleSheet = document.createElement('style');
 styleSheet.textContent = `
     .problem-item,
     .inside-item,
-    .step-item,
     .testimonial {
         opacity: 0;
         transform: translateY(20px);
@@ -83,7 +105,6 @@ styleSheet.textContent = `
     
     section.in-view .problem-item,
     section.in-view .inside-item,
-    section.in-view .step-item,
     section.in-view .testimonial {
         opacity: 1;
         transform: translateY(0);
@@ -102,35 +123,11 @@ styleSheet.textContent = `
     section.in-view .inside-item:nth-child(5) { transition-delay: 0.5s; }
     section.in-view .inside-item:nth-child(6) { transition-delay: 0.6s; }
     
-    section.in-view .step-item:nth-child(1) { transition-delay: 0.1s; }
-    section.in-view .step-item:nth-child(2) { transition-delay: 0.2s; }
-    section.in-view .step-item:nth-child(3) { transition-delay: 0.3s; }
-    section.in-view .step-item:nth-child(4) { transition-delay: 0.4s; }
-    section.in-view .step-item:nth-child(5) { transition-delay: 0.5s; }
-    
     section.in-view .testimonial:nth-child(1) { transition-delay: 0.1s; }
     section.in-view .testimonial:nth-child(2) { transition-delay: 0.2s; }
     section.in-view .testimonial:nth-child(3) { transition-delay: 0.3s; }
 `;
 document.head.appendChild(styleSheet);
-
-/* ========== FAQ ACCORDION ========== */
-
-document.addEventListener('DOMContentLoaded', () => {
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        question.addEventListener('click', () => {
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            item.classList.toggle('active');
-        });
-    });
-});
 
 /* ========== TRACK EVENTS ========== */
 
@@ -162,7 +159,7 @@ window.addEventListener('load', () => {
 console.clear();
 console.log('%c👑🧠 MindCurrency - Proč Tě Přitahují Emočně Nedostupní Lidé', 
     'color: #d4a574; font-size: 16px; font-weight: bold; text-shadow: 0 0 10px rgba(212,165,116,0.5)');
-console.log('%cJednoduš psychologický model jak přerušit vztahový cyklus.', 
+console.log('%cVědecký model jak přerušit vztahový cyklus.', 
     'color: #c41e3a; font-size: 14px;');
 console.log('%c📱 Instagram: @mindcurrency_\n🔗 Linky: linktr.ee/MindCurrency', 
     'color: #e8dcc8; font-size: 12px;');
