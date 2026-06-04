@@ -9,7 +9,7 @@ function scrollTo(selector) {
 
 function handlePurchase() {
     console.log('🛒 Purchase initiated');
-    alert('🔒 Přesměrování na bezpečné zaplacení...\n\nTady budeš integrovat tvůj payment gateway (Stripe, Gopay, atd.)');
+    window.location.href = 'https://buy.stripe.com/4gMcN5aQq4w4cFU1v3eEo01';
 }
 
 /* ========== FAQ ACCORDION ========== */
