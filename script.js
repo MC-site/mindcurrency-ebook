@@ -9,7 +9,7 @@ function scrollTo(selector) {
 
 function handlePurchase() {
     console.log('🛒 Purchase initiated');
-    window.location.href = 'https://book.stripe.com/test_00wdR91fQe6E8pEgpXeEo00';
+    window.location.href = 'https://book.stripe.com/4gMcN5aQq4w4cFU1v3eEo01';
 }
 
 /* ========== FAQ ACCORDION ========== */
